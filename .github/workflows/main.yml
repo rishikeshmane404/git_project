@@ -16,4 +16,6 @@ jobs:
             REMOTE_HOST: ${{ secrets.SSH_HOST }}
             REMOTE_USER: ${{ secrets.USER_NAME }}
             SCRIPT_AFTER: |
+              pwd
+              
                 
