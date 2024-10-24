@@ -11,6 +11,7 @@ jobs:
     steps:
       - name: checkout repo
         uses: actions/checkout@v4
-      - name: show mlopstest.pem file content
-        run: cat mlopstest.pem
-          
+      - name: Check Container
+        run: |
+          ssh -i mlopstest.pem ubuntu@34.220.192.251
+          pwd
