@@ -1,0 +1,15 @@
+name: remote ssh command
+on: 
+  label:
+    types:
+      - created
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Container
+        run: |
+          ssh -i mlopstest.pem ubuntu@34.220.192.251
+          
