@@ -1,4 +1,4 @@
-name: remote ssh command
+name: remote ssh ec2_temp
 on: 
   label:
     types:
@@ -16,6 +16,6 @@ jobs:
             REMOTE_HOST: ${{ secrets.SSH_HOST }}
             REMOTE_USER: ${{ secrets.USER_NAME }}
             SCRIPT_AFTER: |
-              pwd
+              cd dell_v2
               
                 
