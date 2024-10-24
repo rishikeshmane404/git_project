@@ -13,5 +13,5 @@ jobs:
         uses: actions/checkout@v4
       - name: Check Container
         run: |
-          ssh -i mlopstest.pem ubuntu@34.220.192.251
+          ssh -t mlopstest.pem ubuntu@34.220.192.251
           pwd
