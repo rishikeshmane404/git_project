@@ -17,6 +17,6 @@ jobs:
             REMOTE_USER: ${{ secrets.USER_NAME }}
             SCRIPT_AFTER: |
               cd dell_v2
-              python3 ./_project/pipeline.py
+              git clone ${{ github.repository }}
               
                 
