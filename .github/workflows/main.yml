@@ -17,9 +17,10 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           REMOTE_HOST: ${{ secrets.SSH_HOST }}
           REMOTE_USER: ${{ secrets.USER_NAME }}
-          run: |
-            git clone https://github.com/${{ github.repository }}
-            cd ${{ github.repository }}
-            ls
+          SCRIPT_AFTER: |
+              cd /home/
+              git clone https://github.com/${{ github.repository }}
+              cd ${{ github.repository }}
+              ls
 
           
