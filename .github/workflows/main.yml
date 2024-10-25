@@ -21,7 +21,7 @@ jobs:
               sudo mkdir /home/code
               cd /home/code
               sudo git clone https://github.com/${{ github.repository }}
-              cd ${{ github.repository }}
+              cd ${{ github.event.repository.name }}
               ls
 
           
