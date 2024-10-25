@@ -18,7 +18,8 @@ jobs:
           REMOTE_HOST: ${{ secrets.SSH_HOST }}
           REMOTE_USER: ${{ secrets.USER_NAME }}
           SCRIPT_AFTER: |
-              cd /home/
+              sudo mkdir /home/code
+              cd /home/code
               git clone https://github.com/${{ github.repository }}
               cd ${{ github.repository }}
               ls
