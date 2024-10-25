@@ -20,7 +20,7 @@ jobs:
           SCRIPT_AFTER: |
               sudo mkdir /home/code
               cd /home/code
-              git clone https://github.com/${{ github.repository }}
+              sudo git clone https://github.com/${{ github.repository }}
               cd ${{ github.repository }}
               ls
 
