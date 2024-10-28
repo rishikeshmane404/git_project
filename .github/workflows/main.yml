@@ -20,7 +20,7 @@ jobs:
               sudo mkdir /home/code
               cd /home/code
               sudo git clone https://github.com/${{ github.repository }}
-  run_1:
+  Datasource:
     needs: setup
     runs-on: ubuntu-latest
     steps:
@@ -34,8 +34,8 @@ jobs:
               cd ${{ github.event.repository.name }}
               cd _project_root/_src
               python3 datasource.py
-  run_2:
-    needs: run_1
+  Preprocess:
+    needs: Datasource
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -50,8 +50,8 @@ jobs:
               cd ${{ github.event.repository.name }}
               cd _project_root/_src
               python3 preprocess.py
-  run_3:
-    needs: run_2
+  Training:
+    needs: Preprocess
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
