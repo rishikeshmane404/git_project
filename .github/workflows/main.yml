@@ -4,9 +4,8 @@ on:
     types:
       - created
 jobs:
-
-  build:
-    name: Build
+  setup:
+    name: setup
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -21,8 +20,51 @@ jobs:
               sudo mkdir /home/code
               cd /home/code
               sudo git clone https://github.com/${{ github.repository }}
+  run_1:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - uses: easingthemes/ssh-deploy@v5.0.0
+        name: Check Container
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.SSH_HOST }}
+          REMOTE_USER: ${{ secrets.USER_NAME }}
+          SCRIPT_AFTER: |
               cd ${{ github.event.repository.name }}
-              cd _project_root
-              python3 pipeline.py
+              cd _project_root/_src
+              python3 datasource.py
+  run_2:
+    needs: run_1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - uses: easingthemes/ssh-deploy@v5.0.0
+        name: Check Container
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.SSH_HOST }}
+          REMOTE_USER: ${{ secrets.USER_NAME }}
+          SCRIPT_AFTER: |
+              cd ${{ github.event.repository.name }}
+              cd _project_root/_src
+              python3 preprocess.py
+  run_3:
+    needs: run_2
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - uses: easingthemes/ssh-deploy@v5.0.0
+        name: Check Container
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.SSH_HOST }}
+          REMOTE_USER: ${{ secrets.USER_NAME }}
+          SCRIPT_AFTER: |
+              cd ${{ github.event.repository.name }}
+              cd _project_root/_src
+              python3 training.py
 
           
