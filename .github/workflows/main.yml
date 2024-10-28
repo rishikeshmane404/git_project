@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: easingthemes/ssh-deploy@v5.0.0
-        name: Check Container
+        name: Build_1
         with:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           REMOTE_HOST: ${{ secrets.SSH_HOST }}
@@ -38,10 +38,8 @@ jobs:
     needs: Datasource
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
       - uses: easingthemes/ssh-deploy@v5.0.0
-        name: Check Container
+        name: Build_2
         with:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           REMOTE_HOST: ${{ secrets.SSH_HOST }}
@@ -54,10 +52,8 @@ jobs:
     needs: Preprocess
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
       - uses: easingthemes/ssh-deploy@v5.0.0
-        name: Check Container
+        name: Build_3
         with:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           REMOTE_HOST: ${{ secrets.SSH_HOST }}
