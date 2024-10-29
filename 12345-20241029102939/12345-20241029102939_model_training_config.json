@@ -1,0 +1,44 @@
+{
+    "project_workflow_details": {
+        "project_name": "sample_projectv1",
+        "experiment_id": "12345",
+        "user_details": {
+            "user_id": "john.doe@c5i.ai",
+            "username": "john.doe",
+            "user_email": "john.doe@c5i.ai",
+            "login_time_stamp": "29.10.2024.10.18.55",
+            "logout_time_stamp": "None"
+        },
+        "session": {
+            "session_id": 123,
+            "Last Activity Timestamp": "29.10.2024.10.30.04",
+            "duration": 669.0
+        },
+        "imbalance_removal": {
+            "step": "class_imbalance_removal",
+            "step_enable": false,
+            "method": [
+                {
+                    "method_name": "SMOTE",
+                    "method_details": {
+                        "parameters": {
+                            "sampling_strategy": "auto",
+                            "random_state": 42,
+                            "k_neighbors": 5
+                        }
+                    }
+                }
+            ]
+        },
+        "training": {
+            "target_column": "",
+            "train_test_split": 0.7,
+            "task": [
+                {
+                    "taskType": "Classification",
+                    "models": []
+                }
+            ]
+        }
+    }
+}
