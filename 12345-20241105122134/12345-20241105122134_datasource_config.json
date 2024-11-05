@@ -1,0 +1,152 @@
+{
+    "project_workflow_details": {
+        "project_name": "sample_projectv1",
+        "experiment_id": "12345",
+        "user_details": {
+            "user_id": "john.doe@c5i.ai",
+            "username": "john.doe",
+            "user_email": "john.doe@c5i.ai",
+            "login_time_stamp": "05.11.2024.12.17.23",
+            "logout_time_stamp": "None"
+        },
+        "session": {
+            "session_id": 123,
+            "Last Activity Timestamp": "05.11.2024.12.21.34",
+            "duration": 251.0
+        },
+        "pre_processing": {
+            "numerical_columns": [
+                {
+                    "column_name": "petal.length",
+                    "column_type": "float64"
+                },
+                {
+                    "column_name": "petal.width",
+                    "column_type": "float64"
+                },
+                {
+                    "column_name": "sepal.length",
+                    "column_type": "float64"
+                },
+                {
+                    "column_name": "sepal.width",
+                    "column_type": "float64"
+                }
+            ],
+            "categorical_columns": [
+                {
+                    "column_name": "variety",
+                    "column_type": "object"
+                }
+            ],
+            "ignore_columns": [],
+            "id_column": [],
+            "target_column": [],
+            "steps": [
+                {
+                    "step": "outlier_removal",
+                    "step_enable": false,
+                    "method": [
+                        {
+                            "method_name": "mean_with_NSD",
+                            "method_details": {
+                                "Enable": false,
+                                "column_name": [],
+                                "parameters": {
+                                    "nsd": 3
+                                }
+                            }
+                        },
+                        {
+                            "method_name": "interquartile_range",
+                            "method_details": {
+                                "Enable": false,
+                                "column_name": [],
+                                "parameters": {}
+                            }
+                        }
+                    ]
+                },
+                {
+                    "step": "missing_value_imputation",
+                    "step_enable": false,
+                    "method": [
+                        {
+                            "method_name": "mean_imputer",
+                            "method_details": {
+                                "Enable": false,
+                                "column_name": [],
+                                "parameters": {}
+                            }
+                        },
+                        {
+                            "method_name": "category_imputer",
+                            "method_details": {
+                                "Enable": false,
+                                "column_name": [],
+                                "parameters": {}
+                            }
+                        },
+                        {
+                            "method_name": "median_imputer",
+                            "method_details": {
+                                "Enable": false,
+                                "column_name": [],
+                                "parameters": {}
+                            }
+                        }
+                    ]
+                },
+                {
+                    "step": "feature_encoding",
+                    "step_enable": false,
+                    "method": [
+                        {
+                            "method_name": "one_hot_encoding",
+                            "method_details": {
+                                "Enable": false,
+                                "column_name": [],
+                                "parameters": {}
+                            }
+                        },
+                        {
+                            "method_name": "label_encoding",
+                            "method_details": {
+                                "Enable": false,
+                                "column_name": [],
+                                "parameters": {}
+                            }
+                        }
+                    ]
+                },
+                {
+                    "step": "scaling",
+                    "step_enable": false,
+                    "method": [
+                        {
+                            "method_name": "minmax_scaling",
+                            "method_details": {
+                                "Enable": false,
+                                "column_name": [],
+                                "parameters": {
+                                    "feature_range": [
+                                        0,
+                                        1
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "method_name": "standard_scaling",
+                            "method_details": {
+                                "Enable": false,
+                                "column_name": [],
+                                "parameters": {}
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
