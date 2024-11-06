@@ -33,6 +33,8 @@ jobs:
           REMOTE_HOST: ${{ secrets.SSH_HOST }}
           REMOTE_USER: ${{ secrets.USER_NAME }}
           SCRIPT_AFTER: |
+              cd /home
+              rm -rf code
               cd /home/code/${{ github.event.repository.name }}
               cd _project_root
               python3 pipeline.py
