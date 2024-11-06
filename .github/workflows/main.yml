@@ -22,7 +22,7 @@ jobs:
               sudo mkdir /home/code
               cd /home/code
               sudo git clone https://github.com/${{ github.repository }}
-  Datasource:
+  pipeline:
     needs: setup
     runs-on: ubuntu-latest
     steps:
@@ -34,35 +34,35 @@ jobs:
           REMOTE_USER: ${{ secrets.USER_NAME }}
           SCRIPT_AFTER: |
               cd ${{ github.event.repository.name }}
-              cd _project_root/_src
-              python3 datasource.py
-  Preprocess:
-    needs: Datasource
-    runs-on: ubuntu-latest
-    steps:
-      - uses: easingthemes/ssh-deploy@v5.0.0
-        name: Build_2
-        with:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          REMOTE_HOST: ${{ secrets.SSH_HOST }}
-          REMOTE_USER: ${{ secrets.USER_NAME }}
-          SCRIPT_AFTER: |
-              cd ${{ github.event.repository.name }}
-              cd _project_root/_src
-              python3 preprocess.py
-  Training:
-    needs: Preprocess
-    runs-on: ubuntu-latest
-    steps:
-      - uses: easingthemes/ssh-deploy@v5.0.0
-        name: Build_3
-        with:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          REMOTE_HOST: ${{ secrets.SSH_HOST }}
-          REMOTE_USER: ${{ secrets.USER_NAME }}
-          SCRIPT_AFTER: |
-              cd ${{ github.event.repository.name }}
-              cd _project_root/_src
-              python3 training.py
+              cd _project_root
+              python3 pipeline.py
+  # Preprocess:
+  #   needs: Datasource
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: easingthemes/ssh-deploy@v5.0.0
+  #       name: Build_2
+  #       with:
+  #         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+  #         REMOTE_HOST: ${{ secrets.SSH_HOST }}
+  #         REMOTE_USER: ${{ secrets.USER_NAME }}
+  #         SCRIPT_AFTER: |
+  #             cd ${{ github.event.repository.name }}
+  #             cd _project_root/_src
+  #             python3 preprocess.py
+  # Training:
+  #   needs: Preprocess
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: easingthemes/ssh-deploy@v5.0.0
+  #       name: Build_3
+  #       with:
+  #         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+  #         REMOTE_HOST: ${{ secrets.SSH_HOST }}
+  #         REMOTE_USER: ${{ secrets.USER_NAME }}
+  #         SCRIPT_AFTER: |
+  #             cd ${{ github.event.repository.name }}
+  #             cd _project_root/_src
+  #             python3 training.py
 
           
