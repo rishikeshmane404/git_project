@@ -20,7 +20,7 @@ jobs:
           REMOTE_USER: ${{ secrets.USER_NAME }}
           SCRIPT_AFTER: |
               cd /home
-              rm -rf code
+              sudo rm -rf code
               sudo mkdir /home/code
               cd /home/code
               sudo git clone https://github.com/${{ github.repository }}
