@@ -7,9 +7,6 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import mlflow
 import mlflow.pyfunc
-from src.read_data_source import DataIngestor 
-from src.preprocess_data import DataPreprocessing
-from src.training import ModelTraining
 from pycaret.classification import setup, create_model, tune_model, compare_models, pull,evaluate_model,save_model
 from datetime import datetime
 
