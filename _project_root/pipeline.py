@@ -32,7 +32,7 @@ class Pipeline:
         print("------------------------------------------------")
         # # Create an instance of the ModelTraining class
         model_trainer= ModelTraining()
-        MLFLOW_TRACKING_URI = "mlflowhub://radhika_halde"
+        MLFLOW_TRACKING_URI = "http://34.215.213.249:8080/"
         mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
         mlflow.set_experiment(exp_name)
         model_trainer.train_and_save_model(preprocessed_dataset,config_folder_path,training_config_pattern,model_mapping_config_path,model_mapping_pattern,exp_name)    
