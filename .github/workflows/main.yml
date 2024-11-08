@@ -1,10 +1,10 @@
 # we can make use of matrix 
 
 name: remote ssh ec2_temp
-on: 
-  label:
-    types:
-      - created
+on:
+    push:
+      tags:
+      - ‘commit/*’
 jobs:
   setup:
     name: setup
@@ -35,9 +35,8 @@ jobs:
           REMOTE_HOST: ${{ secrets.SSH_HOST }}
           REMOTE_USER: ${{ secrets.USER_NAME }}
           SCRIPT_AFTER: |
-              cd /home/code/${{ github.event.repository.name }}
-              cd _project_root
-              python3 pipeline.py
+              cd /home/code/git_project/dell_workbench_workflow/src
+              python3 training.py
   # Preprocess:
   #   needs: Datasource
   #   runs-on: ubuntu-latest
