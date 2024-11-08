@@ -2,9 +2,9 @@
 
 name: remote ssh ec2_temp
 on:
-    push:
-      tags:
-      - ‘commit/*’
+  push:
+    branches:
+      - main
 jobs:
   setup:
     name: setup
