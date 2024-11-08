@@ -1,0 +1,28 @@
+{
+    "project_workflow_details": {
+        "data_sources": [
+            {
+                "config": {
+                    "filePath": "uploads/dummy_titanic_dataset_100.csv"
+                },
+                "name": "LocalFolderData1",
+                "subtype": "Local Folder",
+                "type": "Local Storage"
+            }
+        ],
+        "experiment_id": "12345",
+        "project_name": "sample_projectv1",
+        "session": {
+            "Last Activity Timestamp": "08.11.2024.09.55.29",
+            "duration": 49.0,
+            "session_id": 123
+        },
+        "user_details": {
+            "login_time_stamp": "08.11.2024.09.54.40",
+            "logout_time_stamp": "None",
+            "user_email": null,
+            "user_id": null,
+            "username": "john.doe"
+        }
+    }
+}
