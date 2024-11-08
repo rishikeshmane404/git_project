@@ -19,11 +19,6 @@ jobs:
           REMOTE_HOST: ${{ secrets.SSH_HOST }}
           REMOTE_USER: ${{ secrets.USER_NAME }}
           SCRIPT_AFTER: |
-              cd /home
-              sudo rm -rf code
-              sudo mkdir /home/code
-              cd /home/code
-              sudo git clone https://github.com/${{ github.repository }}
   pipeline:
     needs: setup
     runs-on: ubuntu-latest
