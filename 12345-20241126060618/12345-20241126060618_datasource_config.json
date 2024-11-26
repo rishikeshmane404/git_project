@@ -1,0 +1,28 @@
+{
+    "project_workflow_details": {
+        "data_sources": [
+            {
+                "config": {
+                    "filePath": "uploads/titanic.xlsx"
+                },
+                "name": "LocalFolderData1",
+                "subtype": "Local Folder",
+                "type": "Local Storage"
+            }
+        ],
+        "experiment_id": "12345",
+        "project_name": "sample_projectv1",
+        "session": {
+            "Last Activity Timestamp": "26.11.2024.06.06.18",
+            "duration": 1411.0,
+            "session_id": 123
+        },
+        "user_details": {
+            "login_time_stamp": "26.11.2024.05.42.47",
+            "logout_time_stamp": "None",
+            "user_email": null,
+            "user_id": null,
+            "username": "john.doe"
+        }
+    }
+}
