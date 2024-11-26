@@ -1,0 +1,151 @@
+{
+    "project_workflow_details": {
+        "experiment_id": "12345",
+        "pre_processing": {
+            "categorical_columns": [],
+            "id_column": [
+                "PassengerId",
+                "Name"
+            ],
+            "ignore_columns": [
+                "Fare",
+                "Cabin",
+                "Age",
+                "Sex",
+                "SibSp",
+                "Parch",
+                "Embarked",
+                "Ticket"
+            ],
+            "numerical_columns": [
+                {
+                    "column_name": "Pclass",
+                    "column_type": "int64"
+                },
+                {
+                    "column_name": "Survived",
+                    "column_type": "int64"
+                }
+            ],
+            "steps": [
+                {
+                    "method": [
+                        {
+                            "method_details": {
+                                "Enable": false,
+                                "column_name": [],
+                                "parameters": {
+                                    "nsd": 3
+                                }
+                            },
+                            "method_name": "mean_with_NSD"
+                        },
+                        {
+                            "method_details": {
+                                "Enable": false,
+                                "column_name": [],
+                                "parameters": {}
+                            },
+                            "method_name": "interquartile_range"
+                        }
+                    ],
+                    "step": "outlier_removal",
+                    "step_enable": false
+                },
+                {
+                    "method": [
+                        {
+                            "method_details": {
+                                "Enable": false,
+                                "column_name": [],
+                                "parameters": {}
+                            },
+                            "method_name": "mean_imputer"
+                        },
+                        {
+                            "method_details": {
+                                "Enable": false,
+                                "column_name": [],
+                                "parameters": {}
+                            },
+                            "method_name": "category_imputer"
+                        },
+                        {
+                            "method_details": {
+                                "Enable": false,
+                                "column_name": [],
+                                "parameters": {}
+                            },
+                            "method_name": "median_imputer"
+                        }
+                    ],
+                    "step": "missing_value_imputation",
+                    "step_enable": false
+                },
+                {
+                    "method": [
+                        {
+                            "method_details": {
+                                "Enable": false,
+                                "column_name": [],
+                                "parameters": {}
+                            },
+                            "method_name": "one_hot_encoding"
+                        },
+                        {
+                            "method_details": {
+                                "Enable": false,
+                                "column_name": [],
+                                "parameters": {}
+                            },
+                            "method_name": "label_encoding"
+                        }
+                    ],
+                    "step": "feature_encoding",
+                    "step_enable": false
+                },
+                {
+                    "method": [
+                        {
+                            "method_details": {
+                                "Enable": false,
+                                "column_name": [],
+                                "parameters": {
+                                    "feature_range": [
+                                        0,
+                                        1
+                                    ]
+                                }
+                            },
+                            "method_name": "minmax_scaling"
+                        },
+                        {
+                            "method_details": {
+                                "Enable": false,
+                                "column_name": [],
+                                "parameters": {}
+                            },
+                            "method_name": "standard_scaling"
+                        }
+                    ],
+                    "step": "scaling",
+                    "step_enable": false
+                }
+            ],
+            "target_column": []
+        },
+        "project_name": "sample_projectv1",
+        "session": {
+            "Last Activity Timestamp": "26.11.2024.04.29.13",
+            "duration": 67.0,
+            "session_id": 123
+        },
+        "user_details": {
+            "login_time_stamp": "26.11.2024.04.28.06",
+            "logout_time_stamp": "None",
+            "user_email": "john.doe@c5i.ai",
+            "user_id": null,
+            "username": "john.doe"
+        }
+    }
+}
