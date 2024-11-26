@@ -1,0 +1,185 @@
+{
+    "project_workflow_details": {
+        "experiment_id": "12345",
+        "pre_processing": {
+            "categorical_columns": [
+                {
+                    "column_name": "Cabin",
+                    "column_type": "object"
+                },
+                {
+                    "column_name": "Embarked",
+                    "column_type": "object"
+                },
+                {
+                    "column_name": "Sex",
+                    "column_type": "object"
+                },
+                {
+                    "column_name": "Ticket",
+                    "column_type": "object"
+                }
+            ],
+            "id_column": [
+                "PassengerId",
+                "Name"
+            ],
+            "ignore_columns": [
+                "Parch"
+            ],
+            "numerical_columns": [
+                {
+                    "column_name": "Age",
+                    "column_type": "int64"
+                },
+                {
+                    "column_name": "Fare",
+                    "column_type": "float64"
+                },
+                {
+                    "column_name": "Pclass",
+                    "column_type": "int64"
+                },
+                {
+                    "column_name": "SibSp",
+                    "column_type": "int64"
+                },
+                {
+                    "column_name": "Survived",
+                    "column_type": "int64"
+                }
+            ],
+            "steps": [
+                {
+                    "method": [
+                        {
+                            "method_details": {
+                                "Enable": true,
+                                "column_name": [
+                                    "Age",
+                                    "Fare",
+                                    "Pclass"
+                                ],
+                                "parameters": {
+                                    "nsd": "3"
+                                }
+                            },
+                            "method_name": "mean_with_NSD"
+                        },
+                        {
+                            "method_details": {
+                                "Enable": false,
+                                "column_name": [],
+                                "parameters": {}
+                            },
+                            "method_name": "interquartile_range"
+                        }
+                    ],
+                    "step": "outlier_removal",
+                    "step_enable": true
+                },
+                {
+                    "method": [
+                        {
+                            "method_details": {
+                                "Enable": false,
+                                "column_name": [],
+                                "parameters": {}
+                            },
+                            "method_name": "mean_imputer"
+                        },
+                        {
+                            "method_details": {
+                                "Enable": true,
+                                "column_name": [
+                                    "Embarked"
+                                ],
+                                "parameters": {}
+                            },
+                            "method_name": "category_imputer"
+                        },
+                        {
+                            "method_details": {
+                                "Enable": false,
+                                "column_name": [],
+                                "parameters": {}
+                            },
+                            "method_name": "median_imputer"
+                        }
+                    ],
+                    "step": "missing_value_imputation",
+                    "step_enable": true
+                },
+                {
+                    "method": [
+                        {
+                            "method_details": {
+                                "Enable": false,
+                                "column_name": [],
+                                "parameters": {}
+                            },
+                            "method_name": "one_hot_encoding"
+                        },
+                        {
+                            "method_details": {
+                                "Enable": true,
+                                "column_name": [
+                                    "Sex"
+                                ],
+                                "parameters": {}
+                            },
+                            "method_name": "label_encoding"
+                        }
+                    ],
+                    "step": "feature_encoding",
+                    "step_enable": true
+                },
+                {
+                    "method": [
+                        {
+                            "method_details": {
+                                "Enable": false,
+                                "column_name": [],
+                                "parameters": {
+                                    "feature_range": [
+                                        0,
+                                        1
+                                    ]
+                                }
+                            },
+                            "method_name": "minmax_scaling"
+                        },
+                        {
+                            "method_details": {
+                                "Enable": true,
+                                "column_name": [
+                                    "Age",
+                                    "Fare",
+                                    "Pclass"
+                                ],
+                                "parameters": {}
+                            },
+                            "method_name": "standard_scaling"
+                        }
+                    ],
+                    "step": "scaling",
+                    "step_enable": true
+                }
+            ],
+            "target_column": []
+        },
+        "project_name": "sample_projectv1",
+        "session": {
+            "Last Activity Timestamp": "26.11.2024.09.55.43",
+            "duration": 797.0,
+            "session_id": 123
+        },
+        "user_details": {
+            "login_time_stamp": "26.11.2024.09.42.26",
+            "logout_time_stamp": "26.11.2024.09.42.17",
+            "user_email": "sahil.chavan@c5i.ai",
+            "user_id": null,
+            "username": "sahil.chavan"
+        }
+    }
+}
