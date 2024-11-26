@@ -1,0 +1,44 @@
+{
+    "project_workflow_details": {
+        "experiment_id": "12345",
+        "imbalance_removal": {
+            "method": [
+                {
+                    "method_details": {
+                        "parameters": {
+                            "k_neighbors": 5,
+                            "random_state": 42,
+                            "sampling_strategy": "auto"
+                        }
+                    },
+                    "method_name": "SMOTE"
+                }
+            ],
+            "step": "class_imbalance_removal",
+            "step_enable": false
+        },
+        "project_name": "sample_projectv1",
+        "session": {
+            "Last Activity Timestamp": "26.11.2024.04.49.57",
+            "duration": 1311.0,
+            "session_id": 123
+        },
+        "training": {
+            "target_column": "Survived",
+            "task": [
+                {
+                    "models": [],
+                    "taskType": "Classification"
+                }
+            ],
+            "train_test_split": 0.7
+        },
+        "user_details": {
+            "login_time_stamp": "26.11.2024.04.28.06",
+            "logout_time_stamp": "None",
+            "user_email": null,
+            "user_id": null,
+            "username": "john.doe"
+        }
+    }
+}
