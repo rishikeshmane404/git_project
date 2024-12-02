@@ -1,0 +1,28 @@
+{
+    "project_workflow_details": {
+        "data_sources": [
+            {
+                "config": {
+                    "filePath": "uploads/demo-data.csv"
+                },
+                "name": "LocalFolderData1",
+                "subtype": "Local Folder",
+                "type": "Local Storage"
+            }
+        ],
+        "experiment_id": "12345",
+        "project_name": "sample_projectv1",
+        "session": {
+            "Last Activity Timestamp": "02.12.2024.08.45.10",
+            "duration": 151.0,
+            "session_id": 123
+        },
+        "user_details": {
+            "login_time_stamp": "02.12.2024.08.42.39",
+            "logout_time_stamp": "02.12.2024.08.42.06",
+            "user_email": null,
+            "user_id": null,
+            "username": "sahil.chavan"
+        }
+    }
+}
