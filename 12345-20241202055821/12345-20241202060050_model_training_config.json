@@ -1,0 +1,86 @@
+{
+    "project_workflow_details": {
+        "experiment_id": "12345",
+        "imbalance_removal": {
+            "method": [
+                {
+                    "method_details": {
+                        "parameters": {
+                            "k_neighbors": 5,
+                            "random_state": 42,
+                            "sampling_strategy": "auto"
+                        }
+                    },
+                    "method_name": "SMOTE"
+                }
+            ],
+            "step": "class_imbalance_removal",
+            "step_enable": false
+        },
+        "project_name": "sample_projectv1",
+        "session": {
+            "Last Activity Timestamp": "02.12.2024.06.00.50",
+            "duration": 495.0,
+            "session_id": 123
+        },
+        "training": {
+            "target_column": "Survived",
+            "task": [
+                {
+                    "models": [
+                        {
+                            "evaluation_metrics": [
+                                "Accuracy"
+                            ],
+                            "hyperparameters": {
+                                "Enable": "True",
+                                "booster": [
+                                    "gbtree"
+                                ],
+                                "colsample_bytree": [
+                                    0.7,
+                                    0.9
+                                ],
+                                "learning_rate": [
+                                    0.08,
+                                    0.1
+                                ],
+                                "max_depth": [
+                                    4,
+                                    6
+                                ],
+                                "min_child_weight": [
+                                    2,
+                                    4
+                                ],
+                                "n_estimators": [
+                                    100,
+                                    200
+                                ],
+                                "subsample": [
+                                    0.7,
+                                    0.9
+                                ]
+                            },
+                            "name": "XGBClassifier",
+                            "tuning": {
+                                "cv": 2,
+                                "method": "grid",
+                                "scoring": "Accuracy"
+                            }
+                        }
+                    ],
+                    "taskType": "Classification"
+                }
+            ],
+            "train_test_split": 0.7
+        },
+        "user_details": {
+            "login_time_stamp": "02.12.2024.05.52.35",
+            "logout_time_stamp": "26.11.2024.09.42.17",
+            "user_email": null,
+            "user_id": null,
+            "username": "sahil.chavan"
+        }
+    }
+}
